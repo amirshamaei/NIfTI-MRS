@@ -47,9 +47,9 @@ A test class has been created to demonstrate examples in the provisional format 
 The first step is instantiating a NiftiMRS object.
 
 
-```
+
    NiftiMRS niftiMRS = new NiftiMRS();
-```
+
 
 
 To assign the usage of each dimension as specified by keys in the “dim_5”, “dim_6” and “dim_7” fields, developers can use specific setters.
