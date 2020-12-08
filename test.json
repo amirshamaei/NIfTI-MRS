@@ -1,0 +1,41 @@
+{
+  "dim_5": "DIM_INDIRECT_0",
+  "dim_5_info": "Echo time increment",
+  "dim_5_header": {
+    "EchoTime": [
+      0.03,
+      0.04
+    ],
+    "RepetitionTime": [
+      1.0,
+      1.1
+    ],
+    "Excitation pulse duration": {
+      "Value": [
+        3
+      ],
+      "Description": "duration of the excitation pulse",
+      "Unit": "ms",
+      "Delete_for_anon": false
+    },
+    "Excitation pulse information": {
+      "Duration": {
+        "Value": [
+          3
+        ],
+        "Description": "Duration of the excitation pulse",
+        "Unit": "ms",
+        "Delete_for_anon": false
+      },
+      "Pulse name": {
+        "Value": [
+          "SINC"
+        ],
+        "Description": "Excitation pulse description",
+        "Delete_for_anon": false
+      }
+    }
+  },
+  "dim_6_header": {},
+  "dim_7_header": {}
+}
