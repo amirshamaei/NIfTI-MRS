@@ -3,7 +3,7 @@
 <!-----
 NEW: Check the "Suppress top comment" option to remove this info from the output.
 
-Conversion time: 0.427 seconds.
+Conversion time: 0.407 seconds.
 
 
 Using this Markdown file:
@@ -16,12 +16,10 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β29
-* Tue Dec 08 2020 10:19:33 GMT-0800 (PST)
+* Tue Dec 08 2020 10:29:31 GMT-0800 (PST)
 * Source doc: Untitled document
 ----->
 
-
-Nifti mrs readme
 
 
 # A JAVA package providing Reading/Writing interface for NIfTi MRS format
@@ -78,7 +76,7 @@ NiftiMRS niftiMRS = new NiftiMRS();
 ```
 
 
-To assign the usege of each dimension as specified by keys in the “dim_5”, “dim_6” and “dim_7” fields, developers can use specific setters.
+To assign the usage of each dimension as specified by keys in the “dim_5”, “dim_6” and “dim_7” fields, developers can use specific setters.
 
 
 ```
@@ -136,3 +134,11 @@ niftiMRS.setDim_5_header("Excitation pulse information", userDefinedMetadataArra
 
 
 ## Applications
+
+_The possible applications of this package are the following software:_
+
+
+
+1. jMRUI: The jMRUI Software Package plays an important role in quantification of MRS, MRSI and HRMAS signals. Most of the reported computational tools have been united in the Java version 5.0, including preparation of a database with NMR-SCOPE and NMR-SCOPE-B. (Graveron-Demilly, D., 2014. Quantification in magnetic resonance spectroscopy based on semi-parametric approaches. Magnetic Resonance Materials in Physics, Biology and Medicine. doi:10.1007/s10334-013-0393-4)
+2. SpectrIm_: a preclinical tool for quantification of MRSI data_
+3. FitAid_: a JAVA tool for quantification of 2D-NMR data (Chong, D.G.Q., Kreis, R., Bolliger, C.S. et al. Two-dimensional linear-combination model fitting of magnetic resonance spectra to define the macromolecule baseline using FiTAID, a Fitting Tool for Arrays of Interrelated Datasets. Magn Reson Mater Phy 24, 147–164 (2011). https://doi.org/10.1007/s10334-011-0246-y)_
