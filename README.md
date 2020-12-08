@@ -3,7 +3,7 @@
 <!-----
 NEW: Check the "Suppress top comment" option to remove this info from the output.
 
-Conversion time: 0.407 seconds.
+Conversion time: 0.876 seconds.
 
 
 Using this Markdown file:
@@ -16,7 +16,7 @@ Using this Markdown file:
 Conversion notes:
 
 * Docs to Markdown version 1.0β29
-* Tue Dec 08 2020 10:29:31 GMT-0800 (PST)
+* Tue Dec 08 2020 10:34:30 GMT-0800 (PST)
 * Source doc: Untitled document
 ----->
 
@@ -105,6 +105,28 @@ niftiMRS.setDim_5_header(TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.1
 ```
 
 
+The output of the above code is:
+
+
+```
+{
+ "dim_5": "DIM_INDIRECT_0",
+ "dim_5_info": "Echo time increment",
+ "dim_5_header": {
+   "EchoTime": [
+     0.03,
+     0.04
+   ],
+   "RepetitionTime": [
+     1.0,
+     1.1
+   ]
+   }
+```
+
+
+}
+
 TAGS is an enum that contains specified metadata.
 
 Users should follow a slightly different approach to define their own metadata. A class, called Metadata, is created for this purpose.
@@ -129,6 +151,48 @@ userDefinedMetadataArrayList.add(userDefinedMetadata_nes1);
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes2);
 
 niftiMRS.setDim_5_header("Excitation pulse information", userDefinedMetadataArrayList);
+
+{
+ "dim_5": "DIM_INDIRECT_0",
+ "dim_5_info": "Echo time increment",
+ "dim_5_header": {
+   "EchoTime": [
+     0.03,
+     0.04
+   ],
+   "RepetitionTime": [
+     1.0,
+     1.1
+   ],
+   "Excitation pulse duration": {
+     "Value": [
+       3
+     ],
+     "Description": "duration of the excitation pulse",
+     "Unit": "ms",
+     "Delete_for_anon": false
+   },
+   "Excitation pulse information": {
+     "Duration": {
+       "Value": [
+         3
+       ],
+       "Description": "Duration of the excitation pulse",
+       "Unit": "ms",
+       "Delete_for_anon": false
+     },
+     "Pulse name": {
+       "Value": [
+         "SINC"
+       ],
+       "Description": "Excitation pulse description",
+       "Delete_for_anon": false
+     }
+   }
+ },
+ "dim_6_header": {},
+ "dim_7_header": {}
+}
 ```
 
 
