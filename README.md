@@ -3,7 +3,7 @@
 
 
 ---
-
+	:warning: UNDER DEVLOPMENT
 
 
 ## Introduction
@@ -47,15 +47,15 @@ A test class has been created to demonstrate examples in the provisional format 
 The first step is instantiating a NiftiMRS object.
 
 
-
+```java
    NiftiMRS niftiMRS = new NiftiMRS();
-
+```
 
 
 To assign the usage of each dimension as specified by keys in the “dim_5”, “dim_6” and “dim_7” fields, developers can use specific setters.
 
 
-```
+```java
 niftiMRS.setDim_5(DIM_KEYS.DIM_INDIRECT_0);
 ```
 
@@ -65,7 +65,7 @@ DIM_KEYS is an enum that contains specified keys.
 If developers want to made dimensions’ information more explicit, setters and getters for “dim_5_info”, “dim_6_info” and “dim_7_info” fields are available. 
 
 
-```
+```java
 niftiMRS.setDim_5_info("Echo time increment");
 ```
 
@@ -75,7 +75,7 @@ If the dimension is used to increment over defined metadata key(s) then this can
 If the metadata key is predefined in the format documentation, developers can use the `setDim_X_header(TAGS tag , List&lt;>) `method:
 
 
-```
+```java
 niftiMRS.setDim_5_header(TAGS.EchoTime, Arrays.asList(new Double[]{0.03, 0.04}));
 niftiMRS.setDim_5_header(TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.10}));
 ```
@@ -84,7 +84,7 @@ niftiMRS.setDim_5_header(TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.1
 The output of the above code is:
 
 
-```
+```json
 {
  "dim_5": "DIM_INDIRECT_0",
  "dim_5_info": "Echo time increment",
@@ -105,7 +105,7 @@ TAGS is an enum that contains specified metadata.
 Users should follow a slightly different approach to define their own metadata. A class, called Metadata, is created for this purpose.
 
 
-```
+```java
 Metadata userDefinedMetadata_1 = new Metadata(Arrays.asList(3), "duration of the excitation pulse", "ms", false);
 
 niftiMRS.setDim_5_header("Excitation pulse duration", userDefinedMetadata_1);
@@ -115,7 +115,7 @@ niftiMRS.setDim_5_header("Excitation pulse duration", userDefinedMetadata_1);
 For nested structures:
 
 
-```
+```java
 Metadata userDefinedMetadata_nes1 = new Metadata("Duration",Arrays.asList(3), "Duration of the excitation pulse", "ms", false);
 Metadata userDefinedMetadata_nes2 = new Metadata("Pulse name",Arrays.asList("SINC"), "Excitation pulse description", null, false);
 
@@ -124,8 +124,10 @@ userDefinedMetadataArrayList.add(userDefinedMetadata_nes1);
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes2);
 
 niftiMRS.setDim_5_header("Excitation pulse information", userDefinedMetadataArrayList);
-...
-...
+```
+
+The final output: 
+```json
 {
  "dim_5": "DIM_INDIRECT_0",
  "dim_5_info": "Echo time increment",
