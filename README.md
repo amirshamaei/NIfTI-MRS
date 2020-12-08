@@ -3,13 +3,11 @@
 
 
 ---
-	:warning: UNDER DEVLOPMENT
-
+	
 
 ## Introduction
 
-NIfTI MRS is a standard format for accessing and sharing spectroscopic data. The purpose of this repository is to provide a robust tool for reading and writing NIfTI MRS format in JAVA programming languages.
-
+NIfTI MRS is a standard format for accessing and sharing spectroscopic data. The purpose of this repository is to provide a robust tool for reading and writing NIfTI MRS format in JAVA programming languages.:warning: UNDER DEVELOPMENT
 
 ## Features
 
