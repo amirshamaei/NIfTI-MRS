@@ -1,27 +1,3 @@
-<!-- Copy and paste the converted output. -->
-
-<!-----
-NEW: Check the "Suppress top comment" option to remove this info from the output.
-
-Conversion time: 0.876 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β29
-* Tue Dec 08 2020 10:34:30 GMT-0800 (PST)
-* Source doc: Untitled document
------>
-
-
-
 # A JAVA package providing Reading/Writing interface for NIfTi MRS format
 
 
@@ -55,7 +31,7 @@ Developers can either include source code into their project or add the maven de
 ```
 
 
-`  `Will be uploded
+`  Will be uploded `
 
 
 ```
@@ -72,7 +48,7 @@ The first step is instantiating a NiftiMRS object.
 
 
 ```
-NiftiMRS niftiMRS = new NiftiMRS();
+   NiftiMRS niftiMRS = new NiftiMRS();
 ```
 
 
@@ -122,11 +98,8 @@ The output of the above code is:
      1.1
    ]
    }
-```
-
-
 }
-
+```
 TAGS is an enum that contains specified metadata.
 
 Users should follow a slightly different approach to define their own metadata. A class, called Metadata, is created for this purpose.
@@ -151,7 +124,8 @@ userDefinedMetadataArrayList.add(userDefinedMetadata_nes1);
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes2);
 
 niftiMRS.setDim_5_header("Excitation pulse information", userDefinedMetadataArrayList);
-
+...
+...
 {
  "dim_5": "DIM_INDIRECT_0",
  "dim_5_info": "Echo time increment",
@@ -204,5 +178,5 @@ _The possible applications of this package are the following software:_
 
 
 1. jMRUI: The jMRUI Software Package plays an important role in quantification of MRS, MRSI and HRMAS signals. Most of the reported computational tools have been united in the Java version 5.0, including preparation of a database with NMR-SCOPE and NMR-SCOPE-B. (Graveron-Demilly, D., 2014. Quantification in magnetic resonance spectroscopy based on semi-parametric approaches. Magnetic Resonance Materials in Physics, Biology and Medicine. doi:10.1007/s10334-013-0393-4)
-2. SpectrIm_: a preclinical tool for quantification of MRSI data_
-3. FitAid_: a JAVA tool for quantification of 2D-NMR data (Chong, D.G.Q., Kreis, R., Bolliger, C.S. et al. Two-dimensional linear-combination model fitting of magnetic resonance spectra to define the macromolecule baseline using FiTAID, a Fitting Tool for Arrays of Interrelated Datasets. Magn Reson Mater Phy 24, 147–164 (2011). https://doi.org/10.1007/s10334-011-0246-y)_
+2. SpectrIm: a preclinical tool for quantification of MRSI data_
+3. FitAid: a JAVA tool for quantification of 2D-NMR data (Chong, D.G.Q., Kreis, R., Bolliger, C.S. et al. Two-dimensional linear-combination model fitting of magnetic resonance spectra to define the macromolecule baseline using FiTAID, a Fitting Tool for Arrays of Interrelated Datasets. Magn Reson Mater Phy 24, 147–164 (2011). https://doi.org/10.1007/s10334-011-0246-y)
