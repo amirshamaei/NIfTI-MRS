@@ -47,7 +47,7 @@ The first step is instantiating a NiftiMRS object.
 
 
 ```java
-   NiftiMRS niftiMRS = new NiftiMRS();
+   JsonExtention JsonNiftiMRS = new JsonExtention();
 ```
 
 
@@ -55,7 +55,7 @@ To assign the usage of each dimension as specified by keys in the “dim_5”, �
 
 
 ```java
-niftiMRS.setDim_5(DIM_KEYS.DIM_INDIRECT_0);
+JsonNiftiMRS.setDim_5(DIM_KEYS.DIM_INDIRECT_0);
 ```
 
 
@@ -65,7 +65,7 @@ If developers want to made dimensions’ information more explicit, setters and 
 
 
 ```java
-niftiMRS.setDim_5_info("Echo time increment");
+JsonNiftiMRS.setDim_5_info("Echo time increment");
 ```
 
 
@@ -75,8 +75,8 @@ If the metadata key is predefined in the format documentation, developers can us
 
 
 ```java
-niftiMRS.setDim_5_header(TAGS.EchoTime, Arrays.asList(new Double[]{0.03, 0.04}));
-niftiMRS.setDim_5_header(TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.10}));
+JsonNiftiMRS.setDim_5_header(TAGS.EchoTime, Arrays.asList(new Double[]{0.03, 0.04}));
+JsonNiftiMRS.setDim_5_header(TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.10}));
 ```
 
 
@@ -107,7 +107,7 @@ Users should follow a slightly different approach to define their own metadata. 
 ```java
 Metadata userDefinedMetadata_1 = new Metadata(Arrays.asList(3), "duration of the excitation pulse", "ms", false);
 
-niftiMRS.setDim_5_header("Excitation pulse duration", userDefinedMetadata_1);
+JsonNiftiMRS.setDim_5_header("Excitation pulse duration", userDefinedMetadata_1);
 ```
 
 
@@ -122,7 +122,7 @@ ArrayList<Metadata> userDefinedMetadataArrayList = new ArrayList<>();
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes1);
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes2);
 
-niftiMRS.setDim_5_header("Excitation pulse information", userDefinedMetadataArrayList);
+JsonNiftiMRS.setDim_5_header("Excitation pulse information", userDefinedMetadataArrayList);
 ```
 
 The final output: 
@@ -169,8 +169,22 @@ The final output:
  "dim_7_header": {}
 }
 ```
+another example for storing json along nifti:
+```java
+        NiftiMRS niftiMRS = new NiftiMRS(new int[] {1,1,1,2048});
 
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j <2 ; j++) {
+                niftiMRS.getNifti().data.set(new int[] {j,0,0,i},Math.random());
+            }
+        }
 
+        niftiMRS.getNifti().header.pixdim[4] = (float) 0.00025;
+        niftiMRS.getJson().ResonantNucleus = new String[] {Nucleus.N_1H.toString()};
+        niftiMRS.getJson().SpectrometerFrequency = new Double[] {400d};
+
+        niftiMRS.write("testNiftiHeadandVol.nii", false, false);
+```
 
 ## Applications
 
