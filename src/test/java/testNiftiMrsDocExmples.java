@@ -8,9 +8,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class test {
+public class testNiftiMrsDocExmples {
     public static void main(String[] args) throws FileNotFoundException {
-        NiftiMRS niftiMRS = new NiftiMRS();
+        JsonExtention niftiMRS = new JsonExtention();
         niftiMRS.setDim_5(DIM_KEYS.DIM_INDIRECT_0);
         niftiMRS.setDim_5_info("Echo time increment");
         niftiMRS.setDim_5_header(TAGS.EchoTime, Arrays.asList(new Double[]{0.03, 0.04}));
@@ -38,7 +38,7 @@ public class test {
 
 
         Gson gson2 = new GsonBuilder().setPrettyPrinting().create();
-        Object object = gson.fromJson(new FileReader("test.json"), NiftiMRS.class);
+        Object object = gson.fromJson(new FileReader("test.json"), JsonExtention.class);
         System.out.println(object);
 
     }

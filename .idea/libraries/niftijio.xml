@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="niftijio">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../my-project/niftijio/out/artifacts/niftijio_jar/niftijio.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
