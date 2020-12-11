@@ -14,7 +14,8 @@ public class testNiftiHeadandVol {
         niftiMRS.getJson().ResonantNucleus = new String[] {Nucleus.N_1H.toString()};
         niftiMRS.getJson().SpectrometerFrequency = new Double[] {400d};
 
-        niftiMRS.write("testNiftiHeadandVol.nii", false, false);
+        niftiMRS.write("testNiftiHeadandVol1", false, false);
+        niftiMRS.write("testNiftiHeadandVol2", true, true);
 
     }
 }
