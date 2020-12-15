@@ -185,6 +185,14 @@ another example for storing json along nifti:
 
         niftiMRS.write("testNiftiHeadandVol.nii", false, false);
 ```
+### Example of writing/reading and visualization of a 2D saturation recovery dataset
+the dataset contains 18 spectra with incremented TS. Data is stored as a nifti file and the visulaized by IDV viewer*.
+*( will be an open-source viewer for multi-dimensional interrelated data and integrated in jmrui core)
+
+
+
+
+
 
 ## Applications
 
