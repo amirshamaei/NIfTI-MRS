@@ -207,3 +207,6 @@ _The possible applications of this package are the following software:_
 1. jMRUI: The jMRUI Software Package plays an important role in quantification of MRS, MRSI and HRMAS signals. Most of the reported computational tools have been united in the Java version 5.0, including preparation of a database with NMR-SCOPE and NMR-SCOPE-B. (Graveron-Demilly, D., 2014. Quantification in magnetic resonance spectroscopy based on semi-parametric approaches. Magnetic Resonance Materials in Physics, Biology and Medicine. doi:10.1007/s10334-013-0393-4)
 2. SpectrIm: a preclinical tool for quantification of MRSI data_
 3. FitAid: a JAVA tool for quantification of 2D-NMR data (Chong, D.G.Q., Kreis, R., Bolliger, C.S. et al. Two-dimensional linear-combination model fitting of magnetic resonance spectra to define the macromolecule baseline using FiTAID, a Fitting Tool for Arrays of Interrelated Datasets. Magn Reson Mater Phy 24, 147–164 (2011). https://doi.org/10.1007/s10334-011-0246-y)
+
+## This project was supported by:
+European Union's Horizon 2020 research and innovation program under the Marie Sklodowska-Curie grant agreement No 813120 (INSPiRE-MED)
