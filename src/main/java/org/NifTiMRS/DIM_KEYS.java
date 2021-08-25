@@ -1,3 +1,5 @@
+package org.NifTiMRS;
+
 public enum DIM_KEYS {
     DIM_COIL,
     DIM_DYN,

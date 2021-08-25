@@ -1,5 +1,9 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import org.NifTiMRS.DIM_KEYS;
+import org.NifTiMRS.JsonExtention;
+import org.NifTiMRS.Metadata;
+import org.NifTiMRS.TAGS;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

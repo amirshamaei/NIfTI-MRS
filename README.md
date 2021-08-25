@@ -43,11 +43,11 @@ Developers can either include source code into their project or add the maven de
 
 A test class has been created to demonstrate examples in the provisional format documentation. Developers can read the documentation [here](https://docs.google.com/document/d/1tC4ugzGUPLoqHRGrWvOcGCuCh_Dogx_uu0cxKub0EsM/edit?usp=sharing). 
 
-The first step is instantiating a NiftiMRS object.
+The first step is instantiating a org.NifTiMRS.NiftiMRS object.
 
 
 ```java
-   JsonExtention JsonNiftiMRS = new JsonExtention();
+   org.NifTiMRS.JsonExtention JsonNiftiMRS = new org.NifTiMRS.JsonExtention();
 ```
 
 
@@ -55,11 +55,11 @@ To assign the usage of each dimension as specified by keys in the “dim_5”, �
 
 
 ```java
-JsonNiftiMRS.setDim_5(DIM_KEYS.DIM_INDIRECT_0);
+JsonNiftiMRS.setDim_5(org.NifTiMRS.DIM_KEYS.DIM_INDIRECT_0);
 ```
 
 
-DIM_KEYS is an enum that contains specified keys.
+org.NifTiMRS.DIM_KEYS is an enum that contains specified keys.
 
 If developers want to made dimensions’ information more explicit, setters and getters for “dim_5_info”, “dim_6_info” and “dim_7_info” fields are available. 
 
@@ -71,12 +71,12 @@ JsonNiftiMRS.setDim_5_info("Echo time increment");
 
 If the dimension is used to increment over defined metadata key(s) then this can be conferred by using the optional “dim_5_header”, “dim_6_header” and “dim_7_header” fields.
 
-If the metadata key is predefined in the format documentation, developers can use the `setDim_X_header(TAGS tag , List&lt;>) `method:
+If the metadata key is predefined in the format documentation, developers can use the `setDim_X_header(org.NifTiMRS.TAGS tag , List&lt;>) `method:
 
 
 ```java
-JsonNiftiMRS.setDim_5_header(TAGS.EchoTime, Arrays.asList(new Double[]{0.03, 0.04}));
-JsonNiftiMRS.setDim_5_header(TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.10}));
+JsonNiftiMRS.setDim_5_header(org.NifTiMRS.TAGS.EchoTime, Arrays.asList(new Double[]{0.03, 0.04}));
+JsonNiftiMRS.setDim_5_header(org.NifTiMRS.TAGS.RepetitionTime, Arrays.asList(new Double[]{1d, 1.10}));
 ```
 
 
@@ -99,13 +99,13 @@ The output of the above code is:
    }
 }
 ```
-TAGS is an enum that contains specified metadata.
+org.NifTiMRS.TAGS is an enum that contains specified metadata.
 
-Users should follow a slightly different approach to define their own metadata. A class, called Metadata, is created for this purpose.
+Users should follow a slightly different approach to define their own metadata. A class, called org.NifTiMRS.Metadata, is created for this purpose.
 
 
 ```java
-Metadata userDefinedMetadata_1 = new Metadata(Arrays.asList(3), "duration of the excitation pulse", "ms", false);
+org.NifTiMRS.Metadata userDefinedMetadata_1 = new org.NifTiMRS.Metadata(Arrays.asList(3), "duration of the excitation pulse", "ms", false);
 
 JsonNiftiMRS.setDim_5_header("Excitation pulse duration", userDefinedMetadata_1);
 ```
@@ -115,10 +115,10 @@ For nested structures:
 
 
 ```java
-Metadata userDefinedMetadata_nes1 = new Metadata("Duration",Arrays.asList(3), "Duration of the excitation pulse", "ms", false);
-Metadata userDefinedMetadata_nes2 = new Metadata("Pulse name",Arrays.asList("SINC"), "Excitation pulse description", null, false);
+org.NifTiMRS.Metadata userDefinedMetadata_nes1 = new org.NifTiMRS.Metadata("Duration",Arrays.asList(3), "Duration of the excitation pulse", "ms", false);
+org.NifTiMRS.Metadata userDefinedMetadata_nes2 = new org.NifTiMRS.Metadata("Pulse name",Arrays.asList("SINC"), "Excitation pulse description", null, false);
 
-ArrayList<Metadata> userDefinedMetadataArrayList = new ArrayList<>();
+ArrayList<org.NifTiMRS.Metadata> userDefinedMetadataArrayList = new ArrayList<>();
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes1);
 userDefinedMetadataArrayList.add(userDefinedMetadata_nes2);
 
@@ -171,7 +171,7 @@ The final output:
 ```
 another example for storing json along nifti:
 ```java
-        NiftiMRS niftiMRS = new NiftiMRS(new int[] {1,1,1,2048});
+        org.NifTiMRS.NiftiMRS niftiMRS = new org.NifTiMRS.NiftiMRS(new int[] {1,1,1,2048});
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j <2 ; j++) {
@@ -180,7 +180,7 @@ another example for storing json along nifti:
         }
 
         niftiMRS.getNifti().header.pixdim[4] = (float) 0.00025;
-        niftiMRS.getJson().ResonantNucleus = new String[] {Nucleus.N_1H.toString()};
+        niftiMRS.getJson().ResonantNucleus = new String[] {org.NifTiMRS.Nucleus.N_1H.toString()};
         niftiMRS.getJson().SpectrometerFrequency = new Double[] {400d};
 
         niftiMRS.write("testNiftiHeadandVol.nii", false, false);

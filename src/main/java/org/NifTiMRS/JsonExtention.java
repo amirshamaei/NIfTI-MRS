@@ -1,3 +1,7 @@
+package org.NifTiMRS;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -12,11 +16,11 @@ public class JsonExtention {
     String dim_5_info;
     JsonObject dim_5_header = new JsonObject();
 
-    String dim_6;
+    DIM_KEYS dim_6;
     String dim_6_info;
     JsonObject dim_6_header = new JsonObject();;
 
-    String dim_7;
+    DIM_KEYS dim_7;
     String dim_7_info;
     JsonObject dim_7_header = new JsonObject();
 
@@ -116,11 +120,11 @@ public class JsonExtention {
         setDim_5_header(metadata.getName(),metadata);
     }
     
-    public String getDim_6() {
+    public DIM_KEYS getDim_6() {
         return dim_6;
     }
 
-    public void setDim_6(String dim_6) {
+    public void setDim_6(DIM_KEYS dim_6) {
         this.dim_6 = dim_6;
     }
 
@@ -140,11 +144,11 @@ public class JsonExtention {
         this.dim_6_header = dim_6_header;
     }
 
-    public String getDim_7() {
+    public DIM_KEYS getDim_7() {
         return dim_7;
     }
 
-    public void setDim_7(String dim_7) {
+    public void setDim_7(DIM_KEYS dim_7) {
         this.dim_7 = dim_7;
     }
 
@@ -164,4 +168,9 @@ public class JsonExtention {
         this.dim_7_header = dim_7_header;
     }
 
+    @Override
+    public String toString() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(this);
+    }
 }

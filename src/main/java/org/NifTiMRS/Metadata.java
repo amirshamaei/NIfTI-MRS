@@ -1,3 +1,5 @@
+package org.NifTiMRS;
+
 import java.util.List;
 
 public class Metadata {

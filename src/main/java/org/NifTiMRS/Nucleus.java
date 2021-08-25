@@ -1,3 +1,5 @@
+package org.NifTiMRS;
+
 public enum Nucleus {
     N_1H ("1H" ),
     N_3HE ("3HE" ),

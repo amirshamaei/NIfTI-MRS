@@ -1,3 +1,5 @@
+package org.NifTiMRS;
+
 public enum TAGS {
     EchoTime,
     RepetitionTime,
